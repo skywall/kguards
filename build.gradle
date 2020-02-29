@@ -2,20 +2,16 @@ plugins {
     id 'org.jetbrains.kotlin.jvm' version '1.3.60'
 }
 
-group 'org.example'
-version '1.0-SNAPSHOT'
-
 repositories {
     mavenCentral()
 }
 
+group 'cz.skywall.kguards'
+version '1.0.0'
+
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8"
     testImplementation("org.junit.jupiter:junit-jupiter:5.6.0")
-}
-
-test {
-    useJUnitPlatform()
 }
 
 compileKotlin {
@@ -23,4 +19,17 @@ compileKotlin {
 }
 compileTestKotlin {
     kotlinOptions.jvmTarget = "1.8"
+}
+
+test {
+    useJUnitPlatform()
+}
+
+task packageSources(type: Jar, dependsOn: 'classes') {
+    from sourceSets.main.allSource
+    archiveClassifier.set('sources')
+}
+
+artifacts {
+    archives packageSources
 }
