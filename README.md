@@ -1,5 +1,5 @@
 ## KGuards
-[![](https://jitpack.io/v/skywall/KGuards.svg)](https://jitpack.io/#skywall/KGuards)
+[![](https://jitpack.io/v/skywall/kguards.svg)](https://jitpack.io/#skywall/kguards)
 ![Check Master](https://github.com/skywall/KGuards/workflows/Check%20Master/badge.svg?branch=master)
 
 Set of simple functions which transforms nested `let` calls into the single one. For example, imagine three nested `let` statements:
