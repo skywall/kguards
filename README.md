@@ -1,7 +1,8 @@
 ## KGuards
-Set of simple functions which transforms nested `let` calls into the single one.  
+[![](https://jitpack.io/v/skywall/KGuards.svg)](https://jitpack.io/#skywall/KGuards)
+![Check Master](https://github.com/skywall/KGuards/workflows/Check%20Master/badge.svg?branch=master)
 
-For example, imagine three nested `let` statements:
+Set of simple functions which transforms nested `let` calls into the single one. For example, imagine three nested `let` statements:
 ```kotlin
 class Test {
     var a: String? = null
@@ -22,7 +23,7 @@ class Test {
 }
 ```
 
-This library allows you to wrap this into the single function:
+KGuards library allows you to wrap this into the single function:
 ```kotlin
 class Test {
     var a: String? = null
@@ -43,5 +44,18 @@ Function `guard` returns `true` whether all of the values weren't null and guard
 block were called. It returns `false` whenever at least one guarded variable is `null`.
 
 ### Download
+build.gradle:
+```groovy
+allprojects {
+    repositories {
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
 
-// TBD
+app/build.gradle:
+```groovy
+dependencies {
+    implementation 'com.github.skywall:kguards:1.0.0'
+}
+```
